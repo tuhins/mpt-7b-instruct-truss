@@ -1,6 +1,6 @@
 bundled_packages_dir: packages
 data_dir: data
-description: MPT-7B is an open-source AI language model developed by MosaicML. MPT-7B Instruct is a model for short-form instruction following. It is built by finetuning MPT-7B on a dataset derived from the Databricks Dolly-15k and the Anthropic Helpful and Harmless (HH-RLHF) datasets.
+description: MPT-7B is an open-source AI language model developed by MosaicML. MPT-7B Instruct is a model for short-form instruction following.
 environment_variables: {}
 examples_filename: examples.yaml
 input_type: Any
