@@ -1,6 +1,6 @@
-# MPT-7B Truss
+# MPT-7B Instruct Truss
 
-This is a [Truss](https://truss.baseten.co/) for [MPT-7B](https://www.mosaicml.com/blog/mpt-7b) using the `mosaicml/mpt-7b` family of models from the `transformers` library. This README will walk you through how to deploy this Truss on Baseten to get your own instance of the MPT-7B (or chat, instruction, or story writer flavors of MPT).
+This is a [Truss](https://truss.baseten.co/) for [MPT-7B](https://www.mosaicml.com/blog/mpt-7b) using the `mosaicml/mpt-7b` family of models from the `transformers` library. This README will walk you through how to deploy the instruction-tuned version on Baseten.
 
 ## Truss
 
@@ -8,7 +8,7 @@ Truss is an open-source model serving framework developed by Baseten. It allows 
 
 ## Deploying MPT-7B
 
-To deploy the MPT-7B Truss, you'll need to follow these steps:
+To deploy the MPT-7B Instruct Truss, you'll need to follow these steps:
 
 1. __Prerequisites__: Make sure you have a Baseten account and API key. You can sign up for a Baseten account [here](https://app.baseten.co/signup).
 
@@ -17,30 +17,28 @@ To deploy the MPT-7B Truss, you'll need to follow these steps:
 pip install --upgrade baseten truss
 ```
 
-3. __Select the MPT model you want__: Make sure the MPT model flavor you want is uncommented in [model/model.py](model/model.py). You can choose the base, instruction tuned, chat, or storywriter versions of the MPT-7B model.
-
-4. __Load the MPT-7B Truss__: Assuming you've cloned this repo, spin up an IPython shell and load the Truss into memory:
+3. __Load the MPT-7B Instruct Truss__: Assuming you've cloned this repo, spin up an IPython shell and load the Truss into memory:
 ```
 import truss
 mpt_truss = truss.load("path/to/mpt_truss")
 ```
 
-5. __Log in to Baseten__: Log in to your Baseten account using your API key (key found [here](https://app.baseten.co/settings/account/api_keys)):
+4. __Log in to Baseten__: Log in to your Baseten account using your API key (key found [here](https://app.baseten.co/settings/account/api_keys)):
 ```
 import baseten
 
 baseten.login("PASTE_API_KEY_HERE")
 ```
 
-6. __Deploy the MPT-7B Truss__: Deploy MPT-7B to Baseten with the following command:
+5. __Deploy the MPT-7B Instruct Truss__: Deploy MPT-7B Instruct to Baseten with the following command:
 ```
 baseten.deploy(mpt_truss)
 ```
 
-Once your Truss is deployed, you can start using MPT-7B through the Baseten platform! Navigate to the Baseten UI to watch the model build and deploy and invoke it via the REST API.
+Once your Truss is deployed, you can start using MPT-7B Instruct through the Baseten platform! Navigate to the Baseten UI to watch the model build and deploy and invoke it via the REST API.
 
 ## MPT-7B API documentation
-This section provides an overview of the MPT-7B API, its parameters, and how to use it. The API consists of a single route named `predict`, which you can invoke to generate text completions based on the provided parameters.
+This section provides an overview of the MPT-7B Instruct API, its parameters, and how to use it. The API consists of a single route named `predict`, which you can invoke to generate text completions based on the provided parameters.
 
 ### API route: `predict`
 The predict route is the primary method for generating images based on a given set of parameters. It takes several parameters:
